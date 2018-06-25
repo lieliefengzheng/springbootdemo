@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+
+<head>
+    <title>JSON取数测试</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bulma.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div id="main">
+    <table class="table is-narrow" >
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>author</td>
+        </tr>
+        <tr v-for="r in rows">
+            <td>{{r.id}}</td>
+            <td>{{r.name}}</td>
+            <td>{{r.author}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $.getJSON("http://192.168.209.70:8222/?author=wilson", function (result, status) {
+            var v = new Vue({
+                el: '#main',
+                data: {
+                    rows: result
+                }
+            })
+        });
+    });
+</script>
+
+</html>

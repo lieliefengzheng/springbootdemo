@@ -1,0 +1,4 @@
+com/manning/demo/entity/Book.class
+com/manning/demo/DemoApplication.class
+com/manning/demo/controller/AuthorController.class
+com/manning/demo/repository/BookRepository.class
